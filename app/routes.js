@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import PostsIndex from './components/post_index';
+import PostsNew from './components/posts_new';
 
 import App from './components/app';
 
@@ -8,6 +9,6 @@ import App from './components/app';
 export default(
   <Route path="/" component={App} >
     <IndexRoute component={PostsIndex}/>
-    {/*<Route path="/greet" component={Greeting} />*/}
+    <Route path="posts/new" component={PostsNew} />
   </Route>
 );
