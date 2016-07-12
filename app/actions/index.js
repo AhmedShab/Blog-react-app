@@ -3,7 +3,7 @@ import axios from 'axios';
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const CREATE_POSTS = 'CREATE_POSTS';
 
-const  ROOT_URL = 'http://reduxblog.herokuapp.com/api';
+const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=12345wmosjfoddofcndif';
 
 export function fetchPosts() {
@@ -19,7 +19,7 @@ export function createPost(props){
   const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, props);
 
   return {
-    type: CREATE_POST,
+    type: CREATE_POSTS,
     playload: request
   };
 }
