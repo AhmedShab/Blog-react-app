@@ -2,6 +2,9 @@ var commonConfig = require('./webpack-common.config.js');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 
+new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+});
 
 var prodLoaders = [
   // javascript/jsx loader - https://www.npmjs.com/package/babel-loader - without the react-hot loader
