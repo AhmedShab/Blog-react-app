@@ -6,9 +6,15 @@ import { browserHistory } from 'react-router';
 
 class PostsNew extends Component {
 
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
   onSubmit(props) {
-    this.props.createPost(props);
-    browserHistory.push('/');
+    this.props.createPost(props)
+      .then(() => {
+        this.context.router.push('/');
+      });
   }
 
   render(){
